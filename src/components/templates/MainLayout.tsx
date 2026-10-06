@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import Navbar from "../organisms/Navbar";
-import Footer from "../organisms/Footer";
+import Navbar from "../organisms/navbar";
+import Footer from "../organisms/footer";
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
