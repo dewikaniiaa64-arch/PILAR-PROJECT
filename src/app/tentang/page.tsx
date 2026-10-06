@@ -2,17 +2,17 @@ import React from "react";
 
 export default function TentangPage() {
   return (
-    <main className="relative w-full min-h-screen overflow-hidden bg-[#EDE7F6]">
+    <main className="relative w-full min-h-screen overflow-hidden bg-gray-50">
       
       {/* ===== LINGKARAN KIRI ATAS ===== */}
       <div className="pointer-events-none absolute -left-12 -top-12 h-32 w-32 rounded-full bg-[#7B5EA7] md:-left-16 md:-top-16 md:h-44 md:w-44" />
       <div className="pointer-events-none absolute left-16 -top-6 h-24 w-24 rounded-full bg-[#B8A0D9] md:left-20 md:-top-8 md:h-32 md:w-32" />
       <div className="pointer-events-none absolute left-0 top-24 h-16 w-16 rounded-full bg-[#D5C5EC] md:left-2 md:top-28 md:h-20 md:w-20" />
 
-      {/* ===== LINGKARAN KANAN BAWAH ===== */}
-      <div className="pointer-events-none absolute -right-12 -bottom-12 h-32 w-32 rounded-full bg-[#7B5EA7] md:-right-16 md:-bottom-16 md:h-44 md:w-44" />
-      <div className="pointer-events-none absolute right-16 -bottom-6 h-24 w-24 rounded-full bg-[#B8A0D9] md:right-20 md:-bottom-8 md:h-32 md:w-32" />
-      <div className="pointer-events-none absolute right-0 bottom-24 h-16 w-16 rounded-full bg-[#D5C5EC] md:right-2 md:bottom-28 md:h-20 md:w-20" />
+      //{/* ===== LINGKARAN KANAN BAWAH ===== */}
+      //<div className="pointer-events-none absolute -right-12 -bottom-12 h-32 w-32 rounded-full bg-[#7B5EA7] md:-right-16 md:-bottom-16 md:h-44 md:w-44" />
+      //<div className="pointer-events-none absolute right-16 -bottom-6 h-24 w-24 rounded-full bg-[#B8A0D9] md:right-20 md:-bottom-8 md:h-32 md:w-32" />
+      //<div className="pointer-events-none absolute right-0 bottom-24 h-16 w-16 rounded-full bg-[#D5C5EC] md:right-2 md:bottom-28 md:h-20 md:w-20" />
 
       {/* ===== KONTEN ===== */}
       <div className="relative z-10 flex min-h-screen items-center justify-center px-6 py-16 md:px-12">
