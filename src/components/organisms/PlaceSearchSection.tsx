@@ -4,8 +4,8 @@ import { useState } from "react";
 import { places } from "../../data/places";
 import { filterPlaces } from "../../lib/filterPlaces";
 import { JURUSAN, KATEGORI } from "../../lib/constants";
-import PlaceCard from "../molecules/PlaceCard";
-import PlaceListItem from "../molecules/PlaceListItem";
+import PlaceCard from "../molecules/Placecard";
+import PlaceListItem from "../molecules/PlaceListitem";
 import Pagination from "../molecules/pagination";
 
 const PAGE_SIZE = 6;
