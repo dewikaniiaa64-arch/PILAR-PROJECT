@@ -10,7 +10,9 @@ export default function PlaceCard({ place }: { place: Place }) {
             <h3 className="font-semibold text-purple-900">{place.nama}</h3>
             <p className="line-clamp-3 text-xs text-gray-600">{place.deskripsi}</p>
             <div className="flex flex-wrap gap-1">
-                <Badge>{place.kategori}</Badge>
+                {place.kategori.map((k) => (
+                    <Badge key={k}>{k}</Badge>
+                ))}
                 {place.jurusan.map((j) => (
                     <Badge key={j}>{j}</Badge>
                 ))}

@@ -72,7 +72,7 @@ export default function PlaceSearchSection() {
                 </div>
 
                 {/* Chip kategori */}
-                <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-4">
+                <div className="mt-4 grid grid-cols-2 gap-3 md:grid-cols-5">
                     {KATEGORI.map((k) => (
                         <button
                             key={k}
