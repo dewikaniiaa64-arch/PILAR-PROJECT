@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import Logo from "../atoms/Logo";
-import Button from "../atoms/Button";
+import Logo from "../atoms/logo";
+import Button from "../atoms/button";
 
 const menu = [
   { label: "Beranda", href: "/" },
@@ -30,7 +30,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-slate-50 shadow-sm">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
+      <nav className="flex items-center justify-between px-4 py-3 sm:px-8 sm:py-4 lg:px-16">
         <Logo />
 
         {/* menu desktop */}
