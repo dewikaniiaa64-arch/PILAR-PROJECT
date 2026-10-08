@@ -1,12 +1,8 @@
 export const KATEGORI = [
-    "Pelayanan Publik",
-    "Bisnis & Retail",
-    "IT & Digital",
-    "Perbankan & Pelayanan Keuangan",
-    "Administrasi & Pelayanan Pendidikan",
-    "Lingkungan Hidup & Kehutanan",
-    "Instansi & Administrasi Pemerintahan",
-    "Industri & Perusahaan",
+    "Pemerintahan & Pelayanan Publik",
+    "Pendidikan & Administrasi",
+    "Bisnis, Keuangan & Retail",
+    "Teknologi & Industri"
 ];
 
-export const JURUSAN = ["Akutansi", "MPLB", "Pemasaran", "PPLG"];
+export const JURUSAN = ["Akuntansi", "MPLB", "Pemasaran", "PPLG"];

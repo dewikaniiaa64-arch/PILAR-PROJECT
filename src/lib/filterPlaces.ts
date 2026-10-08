@@ -11,7 +11,7 @@ export function filterPlaces(
     return places.filter((p) => {
         const cocokNama = p.nama.toLowerCase().includes(q);
         const cocokJurusan = jurusan === "" || p.jurusan.includes(jurusan);
-        const cocokKategori = kategori === "" || p.kategori === kategori;
+        const cocokKategori = kategori === "" || p.kategori.includes(kategori);
         return cocokNama && cocokJurusan && cocokKategori;
     });
 }
