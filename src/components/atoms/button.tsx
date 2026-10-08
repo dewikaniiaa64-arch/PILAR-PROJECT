@@ -20,7 +20,7 @@ export default function Button({
      primary:
       "bg-[linear-gradient(to_right,#2D065C,#5608B5,rgba(103,10,215,0.74))] text-white hover:brightness-125 rounded-lg",
     outline:
-      "border border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white",
+      "border border-black text-black hover:bg-black hover:text-white",
   };
   const classes = `${base} ${styles[variant]} ${className}`;
 

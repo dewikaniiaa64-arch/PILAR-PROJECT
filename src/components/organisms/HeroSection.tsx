@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "../atoms/button";
 
+
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-purple-50">
@@ -11,7 +12,7 @@ export default function HeroSection() {
 
       <div className="relative mx-auto grid max-w-6xl gap-y-6 px-4 py-12 sm:px-6 sm:py-16 md:grid-cols-2 md:gap-x-10 md:gap-y-0 lg:py-20">
         {/* 1. judul */}
-        <h1 className="text-center text-3xl font-bold leading-tight text-purple-900 sm:text-4xl md:col-start-1 md:row-start-1 md:self-end md:text-left lg:text-5xl">
+        <h1 className="text-center text-3xl font-bold leading-tight text-black sm:text-4xl md:col-start-1 md:row-start-1 md:self-end md:text-left lg:text-5xl">
           Temukan tempat PKL yang tepat untuk masa depanmu
         </h1>
 
@@ -29,7 +30,7 @@ export default function HeroSection() {
 
         {/* 3. paragraf + tombol */}
         <div className="text-center md:col-start-1 md:row-start-2 md:self-start md:pt-6 md:text-left">
-          <p className="mx-auto max-w-md text-sm leading-relaxed text-purple-900 md:mx-0">
+          <p className="mx-auto max-w-md text-sm leading-relaxed text-black md:mx-0">
             Pusat Informasi Tempat PKL membantu siswa menemukan tempat praktik
             kerja lapangan yang sesuai minat dan kebutuhan. Cari tahu nama
             tempat, bidang kegiatan, dan lokasinya dalam satu platform
