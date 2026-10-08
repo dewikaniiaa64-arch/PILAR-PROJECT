@@ -18,21 +18,21 @@ export default async function DetailTempatPage({ params }: Props) {
     }
 
     return (
-        <main className="w-full mx-auto bg-gray-50">
-            <div className="max-w-6xl mx-auto px-4 py-8">
+        <main className="w-full bg-gray-50">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
                 {/* Tombol Kembali */}
                 <Link
                     href="/pencarian"
-                    className="inline-flex items-center text-purple-700 font-medium mb-8 hover:underline"
+                    className="inline-flex items-center text-[#2D015C] font-semibold mb-6 sm:mb-8 hover:underline text-sm sm:text-base"
                 >
                     <span className="mr-2">←</span> Kembali
                 </Link>
 
                 {/* Grid Layout: 2 Kolom */}
-                <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-6 md:gap-10">
 
                     {/* KOLOM KIRI: Gambar & Card Info */}
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-4 sm:gap-6">
                         {/* Gambar Utama */}
                         <div className="w-full aspect-video md:aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
                             {place.foto && place.foto[0] ? (
@@ -49,23 +49,20 @@ export default async function DetailTempatPage({ params }: Props) {
                         </div>
 
                         {/* Card Info (Kuota, Kontak) */}
-                        <div className="border border-gray-200 rounded-2xl p-6 bg-white shadow-sm">
-                            <div className="mb-6">
-                                <p className="text-sm text-gray-500 mb-1">Kuota</p>
-                                <p className="text-xl font-bold text-purple-900">
+                        <div className="border border-gray-200 rounded-2xl p-4 sm:p-6 bg-white shadow-sm">
+                            <div className="mb-4 sm:mb-6">
+                                <p className="text-sm text-black mb-1">Kuota</p>
+                                <p className="text-lg sm:text-xl font-bold text-black">
                                     {place.kuota} Siswa
                                 </p>
                             </div>
 
-                            <div className="space-y-4 text-gray-600">
+                            <div className="space-y-3 sm:space-y-4 text-[#8B5CF6] text-sm sm:text-base">
                                 {/* Telepon */}
                                 {place.telepon && (
-                                    <div className="flex items-center gap-3">
-                                        <Phone className="w-5 h-5 text-purple-700" />
-                                        <a
-                                            href={`tel:${place.telepon}`}
-                                            className="hover:text-purple-700"
-                                        >
+                                    <div className="flex items-start gap-3">
+                                        <Phone className="w-5 h-5 text-[#8B5CF6] shrink-0 mt-0.5" />
+                                        <a href={`tel:${place.telepon}`} className="hover:text-purple-300 break-all">
                                             {place.telepon}
                                         </a>
                                     </div>
@@ -73,12 +70,9 @@ export default async function DetailTempatPage({ params }: Props) {
 
                                 {/* Email */}
                                 {place.email && (
-                                    <div className="flex items-center gap-3">
-                                        <Mail className="w-5 h-5 text-purple-700" />
-                                        <a
-                                            href={`mailto:${place.email}`}
-                                            className="hover:text-purple-700"
-                                        >
+                                    <div className="flex items-start gap-3">
+                                        <Mail className="w-5 h-5 text-[#8B5CF6] shrink-0 mt-0.5" />
+                                        <a href={`mailto:${place.email}`} className="hover:text-purple-300 break-all">
                                             {place.email}
                                         </a>
                                     </div>
@@ -86,13 +80,13 @@ export default async function DetailTempatPage({ params }: Props) {
 
                                 {/* Website */}
                                 {place.website && (
-                                    <div className="flex items-center gap-3">
-                                        <Globe className="w-5 h-5 text-purple-700" />
+                                    <div className="flex items-start gap-3">
+                                        <Globe className="w-5 h-5 text-[#8B5CF6] shrink-0 mt-0.5" />
                                         <a
                                             href={place.website}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="hover:text-purple-700"
+                                            className="hover:text-purple-300 break-all"
                                         >
                                             {place.website}
                                         </a>
@@ -103,27 +97,34 @@ export default async function DetailTempatPage({ params }: Props) {
                     </div>
 
                     {/* KOLOM KANAN: Detail Teks */}
-                    <div className="flex flex-col pt-2">
+                    <div className="flex flex-col pt-0 md:pt-2">
                         {/* Judul & Kategori */}
-                        <h1 className="text-3xl md:text-4xl font-bold text-purple-900 mb-3">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-3">
                             {place.nama}
                         </h1>
-                        <div className="inline-block bg-gray-100 text-[#370389] px-4 py-1.5 rounded-full text-sm font-medium w-fit mb-6">
-                            {place.kategori}
+                        <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
+                            {place.kategori.map((k, index) => (
+                                <span
+                                    key={index}
+                                    className="bg-purple-100 text-[#2D015C] px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs sm:text-sm font-semibold"
+                                >
+                                    {k}
+                                </span>
+                            ))}
                         </div>
 
                         {/* Lokasi & Maps */}
-                        <div className="mb-8">
-                            <div className="flex items-center gap-2 text-purple-900 font-semibold mb-1">
-                                <MapPin className="w-8 h-8" />
-                                <span>{place.lokasi}</span>
+                        <div className="mb-6 sm:mb-8">
+                            <div className="flex items-start gap-2 sm:gap-3 text-black font-semibold mb-1">
+                                <MapPin className="w-5 h-5 sm:w-6 sm:h-6 shrink-0 mt-0.5" />
+                                <span className="text-sm sm:text-base">{place.lokasi}</span>
                             </div>
                             {place.linkMaps && (
                                 <a
                                     href={place.linkMaps}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-sm text-purple-600 underline break-all ml-8"
+                                    className="text-xs sm:text-sm text-[#8B5CF6] hover:text-purple-500 underline break-all block mt-1 pl-7 sm:pl-9"
                                 >
                                     {place.linkMaps}
                                 </a>
@@ -131,21 +132,21 @@ export default async function DetailTempatPage({ params }: Props) {
                         </div>
 
                         {/* Tentang */}
-                        <div className="mb-8">
-                            <h2 className="text-lg font-semibold text-[#370389] mb-2">
+                        <div className="mb-6 sm:mb-8">
+                            <h2 className="text-base sm:text-lg font-semibold text-black mb-2">
                                 Tentang
                             </h2>
-                            <p className="text-[#370389] leading-relaxed text-justify">
+                            <p className="text-sm sm:text-base text-black leading-relaxed">
                                 {place.tentang}
                             </p>
                         </div>
 
                         {/* Kegiatan */}
-                        <div className="mb-8">
-                            <h2 className="text-lg font-semibold text-[#370389] mb-2">
+                        <div className="mb-6 sm:mb-8">
+                            <h2 className="text-base sm:text-lg font-semibold text-black mb-2">
                                 Kegiatan
                             </h2>
-                            <ul className="list-disc list-inside text-[#370389] space-y-1 ml-2">
+                            <ul className="list-disc list-inside text-black space-y-1 ml-2 text-sm sm:text-base">
                                 {place.daftarKegiatan.map((kegiatan, index) => (
                                     <li key={index}>{kegiatan}</li>
                                 ))}
@@ -154,14 +155,14 @@ export default async function DetailTempatPage({ params }: Props) {
 
                         {/* Jurusan yang Sesuai */}
                         <div className="mb-6">
-                            <h2 className="text-lg font-bold text-[#370389] mb-3">
+                            <h2 className="text-base sm:text-lg font-bold text-black mb-3">
                                 Jurusan Yang Sesuai
                             </h2>
-                            <div className="flex flex-wrap gap-3">
+                            <div className="flex flex-wrap gap-2 sm:gap-3">
                                 {place.jurusan.map((jur, index) => (
                                     <span
                                         key={index}
-                                        className="px-4 py-1.5 border border-purple-300 text-purple-700 rounded-full text-sm font-medium"
+                                        className="px-3 sm:px-4 py-1 sm:py-1.5 bg-purple-100 text-[#2D015C] rounded-full text-xs sm:text-sm font-semibold"
                                     >
                                         {jur}
                                     </span>
@@ -171,12 +172,12 @@ export default async function DetailTempatPage({ params }: Props) {
 
                         {/* Role */}
                         <div>
-                            <h2 className="text-lg font-bold text-[#370389] mb-3">Role</h2>
-                            <div className="flex flex-wrap gap-3">
+                            <h2 className="text-base sm:text-lg font-bold text-black mb-3">Role</h2>
+                            <div className="flex flex-wrap gap-2 sm:gap-3">
                                 {place.role.map((r, index) => (
                                     <span
                                         key={index}
-                                        className="px-4 py-1.5 border border-purple-300 text-purple-700 rounded-full text-sm font-medium"
+                                        className="px-3 sm:px-4 py-1 sm:py-1.5 bg-purple-100 text-[#2D015C] rounded-full text-xs sm:text-sm font-semibold"
                                     >
                                         {r}
                                     </span>
@@ -184,45 +185,41 @@ export default async function DetailTempatPage({ params }: Props) {
                             </div>
                         </div>
                     </div>
-                    {/* ↓ Ini penutup kolom kanan */}
                 </div>
-                {/* ↓ Ini penutup grid 2 kolom */}
 
-                {/* ============================================ */}
-                {/* SECTION CABANG — Full width, di luar grid    */}
-                {/* ============================================ */}
+                {/* SECTION CABANG */}
                 {place.cabang && place.cabang.length > 0 && (
-                    <div className="mt-12">
-                        <h2 className="text-xl font-bold text-[#370389] mb-4">
+                    <div className="mt-8 sm:mt-12">
+                        <h2 className="text-lg sm:text-xl font-bold text-black mb-4">
                             Cabang yang Bisa Dipilih
                         </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                             {place.cabang.map((c, index) => (
                                 <div
                                     key={index}
-                                    className="border border-gray-200 rounded-xl p-4 bg-white shadow-sm hover:shadow-md transition"
+                                    className="border border-gray-200 rounded-xl p-3 sm:p-4 bg-white shadow-sm hover:shadow-md transition"
                                 >
-                                    <h3 className="font-semibold text-purple-900 mb-2">{c.nama}</h3>
-                                    <p className="text-sm text-gray-600 mb-3 leading-relaxed">
+                                    <h3 className="font-semibold text-black mb-2 text-sm sm:text-base">{c.nama}</h3>
+                                    <p className="text-xs sm:text-sm text-gray-600 mb-3 leading-relaxed">
                                         {c.alamat}
                                     </p>
-                                    <div className="flex flex-col gap-1 text-sm">
+                                    <div className="flex flex-col gap-1 text-xs sm:text-sm">
                                         {c.linkMaps && (
                                             <a
                                                 href={c.linkMaps}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-purple-600 hover:text-purple-800 underline flex items-center gap-2"
+                                                className="text-[#370389] hover:text-purple-500 underline flex items-center gap-2 break-all"
                                             >
-                                                <MapPin className="w-4 h-4" /> Lihat di Maps
+                                                <MapPin className="w-4 h-4 shrink-0" /> Lihat di Maps
                                             </a>
                                         )}
                                         {c.telepon && (
                                             <a
                                                 href={`tel:${c.telepon}`}
-                                                className="text-purple-600 hover:text-purple-800 flex items-center gap-2"
+                                                className="text-[#370389] hover:text-purple-500 flex items-center gap-2"
                                             >
-                                                <Phone className="w-4 h-4" /> {c.telepon}
+                                                <Phone className="w-4 h-4 shrink-0" /> {c.telepon}
                                             </a>
                                         )}
                                     </div>

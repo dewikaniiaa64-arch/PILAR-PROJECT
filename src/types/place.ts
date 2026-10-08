@@ -1,10 +1,8 @@
-// src/types/place.ts
-
 export interface Cabang {
-    nama: string;         // "Alfamart Cimalaka"
-    alamat: string;       // "Jl. Raya Cimalaka No. 12, Sumedang"
-    linkMaps?: string;    // link Google Maps (opsional)
-    telepon?: string;     // telepon cabang (opsional)
+    nama: string;
+    alamat: string;
+    linkMaps?: string;
+    telepon?: string;
 }
 
 export interface Place {
@@ -12,7 +10,7 @@ export interface Place {
     nama: string;
     logo: string;
     deskripsi: string;
-    kategori: string;
+    kategori: string[];
     jurusan: string[];
     foto: string[];
     lokasi: string;

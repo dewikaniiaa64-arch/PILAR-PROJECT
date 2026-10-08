@@ -1,5 +1,4 @@
 export const KATEGORI = [
-    "Semua Kategori",
     "Pemerintahan & Pelayanan Publik",
     "Pendidikan & Administrasi",
     "Bisnis, Keuangan & Retail",

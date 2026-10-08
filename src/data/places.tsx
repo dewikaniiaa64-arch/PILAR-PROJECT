@@ -47,7 +47,7 @@ export const places: Place[] = [
         website: "https://spmb.sumedangkab.go.id/",
         lokasi: "Jl. Pendopo Tegal Kalong No. 19, Talun, Kecamatan Sumedang Utara, Kabupaten Sumedang, Jawa Barat 45621.",
         linkMaps: "https://maps.app.goo.gl/NbeVV7VYShS9jfYe8",
-        foto: ["/tempat/DinasPendidikan.jpeg"],
+        foto: ["/tempat/Dinas Pendidikan.jpeg"],
         deskripsi: "adalah unsur pelaksana urusan pemerintahan daerah di bidang pendidikan yang bertugas merumuskan, melaksanakan, dan mengoordinasikan kebijakan pendidikan di wilayah Kabupaten.",
         daftarKegiatan: ["Pengarsipan & Administrasi", "Pengolahan Data Pendidikan", "Pelayanan Umum", "Pendataan Sarpras"],
         kuota: 15,
@@ -60,7 +60,7 @@ export const places: Place[] = [
         nama: "BPJS Kesehatan Kab. Sumedang",
         logo: "/logos/BPJSS.png",
         tentang: "BPJS Kesehatan Kantor Cabang Sumedang adalah kantor cabang Badan Penyelenggara Jaminan Sosial (BPJS) Kesehatan yang bertanggung jawab untuk menyelenggarakan program Jaminan Kesehatan Nasional (JKN) di wilayah Kabupaten Sumedang, Jawa Barat ",
-        kategori: ["Pemerintahan & Pelayanan Publik", "Semua Kategori"],
+        kategori: ["Pemerintahan & Pelayanan Publik"],
         jurusan: ["Akuntansi"],
         telepon: "(0261) 203580 ",
         email: "pandawa@bpjs-kesehatan.go.id ",
@@ -80,7 +80,7 @@ export const places: Place[] = [
         nama: "Alfamart",
         logo: "/logos/alfamart.png",
         tentang: "Alfamart adalah jaringan minimarket terbesar di Indonesia yang menyediakan berbagai kebutuhan sehari-hari dengan harga terjangkau.",
-        kategori: ["Bisnis, Keuangan & Retail", "Semua Kategori"],
+        kategori: ["Bisnis, Keuangan & Retail"],
         jurusan: ["Pemasaran"],
         lokasi: "Kab. Sumedang",
         foto: ["/tempat/Alfamart.jpeg"],
@@ -176,7 +176,7 @@ export const places: Place[] = [
         nama: "Asia Plaza Sumedang",
         logo: "/logos/Plaza Asia.jpeg",
         deskripsi: "Pusat perbelanjaan di Kabupaten Sumedang yang menyediakan kebutuhan masyarakat, seperti fashion, kuliner, dan kebutuhan sehari-hari.",
-        kategori: ["Bisnis, Keuangan & Retail", "Semua Kategori"],
+        kategori: ["Bisnis, Keuangan & Retail"],
         telepon: "(0265) 2352215",
         email: "plaza.asia326@gmail.com",
         website: "https://www.asiatoserba.com/",
@@ -196,7 +196,7 @@ export const places: Place[] = [
         nama: "PT Sawala Inovasi Indonesia (Sawala)",
         logo: "/logos/SAWALA.jpeg",
         deskripsi: "Pengembangan software dan solusi digital untuk berbagai klien.",
-        kategori: ["Teknologi & Industri", "Semua Kategori"],
+        kategori: ["Teknologi & Industri"],
         telepon: "085320992102",
         email: "",
         website: "https://sawala.tech/id/",
@@ -236,7 +236,7 @@ export const places: Place[] = [
         nama: "Bank BJB Kab. Sumedang",
         logo: "/logos/Bank BJB.jpeg",
         deskripsi: "Bank umum yang melayani penghimpunan dana, kredit, dan berbagai transaksi keuangan.",
-        kategori: ["Bisnis, Keuangan & Retail", "Semua Kategori"],
+        kategori: ["Bisnis, Keuangan & Retail"],
         telepon: "(0261) 201395",
         email: "bjbcare@bankbjb.co.id ",
         website: "https://bankbjb.co.id/",
@@ -254,4 +254,4 @@ export const places: Place[] = [
 
 
 
-];  
+];
