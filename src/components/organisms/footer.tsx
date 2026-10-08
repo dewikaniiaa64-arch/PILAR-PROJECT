@@ -1,5 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Sekuya } from "next/font/google";
+
+const sekuya = Sekuya({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  adjustFontFallback: false,
+});
 
 const kolom = [
   {
@@ -27,7 +35,7 @@ const kolom = [
 
 export default function Footer() {
   return (
-    <footer className="bg-purple-50">
+    <footer>
       <div className="relative overflow-hidden bg-[radial-gradient(ellipse_at_center,#3b1d6e_0%,#6b2a9a_60%,#8e3bb8_100%)] text-white">
         {/* gelombang: tinggi menyesuaikan ukuran layar */}
         <svg
@@ -50,13 +58,17 @@ export default function Footer() {
               className="h-auto w-3/4"
             />
           </div>
-          <p className="mt-4 text-2xl font-black tracking-wider sm:mt-6 sm:text-3xl">
+          <p
+            className={`${sekuya.className} mt-4 text-2xl tracking-wider sm:mt-6 sm:text-3xl`}
+          >
             PILAR
           </p>
         </div>
 
-        {/* garis putus-putus */}
-        <div className="mx-4 mt-6 border-t border-dotted border-white/70 sm:mx-8" />
+       {/* garis putus-putus */}
+<div className="mx-auto max-w-6xl px-4 sm:px-6">
+  <div className="mt-6 border-t border-dotted border-white/70" />
+</div>
 
         {/* kolom link: 2 kolom di HP, 3 kolom di layar >= sm */}
         <div className="mx-auto grid max-w-3xl grid-cols-2 gap-x-4 gap-y-8 px-6 py-8 sm:grid-cols-3 sm:py-10">
