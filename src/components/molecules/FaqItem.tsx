@@ -22,11 +22,14 @@ export default function FaqItem({
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full items-center justify-between gap-4 py-5 text-left"
       >
-        <span className="text-sm text-black md:text-base">{question}</span>
+        {/* DIUBAH: ditambah font-bold */}
+        <span className="text-sm font-semibold text-black md:text-base">
+          {question}
+        </span>
 
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gray-100">
           <ChevronDown
-            className={`h-4 w-4 text-gray-700 transition-transform duration-200 ${
+            className={`h-4 w-4 text-black transition-transform duration-200 ${
               isOpen ? "rotate-180" : ""
             }`}
             strokeWidth={2}
@@ -36,7 +39,7 @@ export default function FaqItem({
 
       {isOpen && (
         <div className="pb-5 pr-12">
-          <p className="text-xs leading-relaxed text-gray-700 md:text-sm">
+          <p className="text-xs leading-relaxed text-black md:text-sm">
             {answer}
           </p>
         </div>

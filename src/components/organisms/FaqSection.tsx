@@ -10,7 +10,7 @@ export default function FaqSection() {
         <h1 className="mb-3 text-center text-3xl font-bold text-black md:text-4xl">
           FAQ
         </h1>
-        <p className="mb-12 text-center text-sm text-gray-700 md:text-base">
+        <p className="mb-12 text-center text-sm text-black md:text-base">
           Pertanyaan yang sering diajukan seputar Pusat Informasi Tempat PKL.
         </p>
 
@@ -34,15 +34,15 @@ export default function FaqSection() {
           <h2 className="mb-2 text-xl font-bold text-black md:text-2xl">
             Masih ada pertanyaan?
           </h2>
-          <p className="mb-6 text-sm text-gray-700 md:text-base">
+          <p className="mb-6 text-sm text-black md:text-base">
             Hubungi kami jika kamu butuh bantuan lebih lanjut.
           </p>
           <a
-            href="/kontak"
-            className="inline-block border border-black bg-white px-6 py-2 text-sm font-medium text-black transition hover:bg-black hover:text-white"
-          >
-            Kontak
-          </a>
+  href="/kontak"
+  className="inline-block rounded-lg border border-[#5A0FB6] bg-gradient-to-r from-[#5A0FB6] via-[#6912DA] to-[#670AD7]/60 px-8 py-2.5 text-lg font-medium text-white transition hover:opacity-90"
+>
+  Kontak
+</a>
         </div>
       </div>
     </section>
