@@ -10,7 +10,7 @@ export default function FaqSection() {
         <h1 className="mb-3 text-center text-3xl font-bold text-black md:text-4xl">
           FAQ
         </h1>
-        <p className="mb-12 text-center text-sm text-gray-700 md:text-base">
+        <p className="mb-12 text-center text-sm text-black md:text-base">
           Pertanyaan yang sering diajukan seputar Pusat Informasi Tempat PKL.
         </p>
 
@@ -34,7 +34,7 @@ export default function FaqSection() {
           <h2 className="mb-2 text-xl font-bold text-black md:text-2xl">
             Masih ada pertanyaan?
           </h2>
-          <p className="mb-6 text-sm text-gray-700 md:text-base">
+          <p className="mb-6 text-sm text-black md:text-base">
             Hubungi kami jika kamu butuh bantuan lebih lanjut.
           </p>
           <a

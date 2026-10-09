@@ -45,7 +45,11 @@ export default function Navbar() {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 bg-slate-50 shadow-sm">
+    // DIUBAH: ditambah style fontFamily Montserrat
+    <header
+      className="sticky top-0 z-50 bg-slate-50 shadow-sm"
+      style={{ fontFamily: "var(--font-montserrat)" }}
+    >
       <nav className="flex items-center justify-between px-4 py-3 sm:px-8 sm:py-4 lg:px-16">
         <Logo />
 
