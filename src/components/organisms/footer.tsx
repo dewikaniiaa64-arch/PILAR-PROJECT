@@ -13,33 +13,41 @@ const kolom = [
   {
     judul: "Tentang",
     link: [
-      { label: "Beranda", href: "/" },
+      { label: "Beranda", href: "/#beranda" },
       { label: "About Us", href: "/tentang" },
     ],
   },
   {
     judul: "Jelajahi",
     link: [
-      { label: "Informasi", href: "/tiga-langkah" },
-      { label: "Cari Tempat PKL", href: "/pencarian" },
+      { label: "Informasi", href: "/#informasi" },
+      { label: "Cari Tempat PKL", href: "/#pencarian" },
     ],
   },
   {
     judul: "Bantuan",
     link: [
-      { label: "FAQ", href: "/faq" },
-      { label: "Kontak", href: "/kontak" },
+      { label: "FAQ", href: "/#informasi" },
+      { label: "Kontak", href: "/#kontak" },
+    ],
+  },
+   {
+    judul: "Sosial",
+    link: [
+      { label: "Instagram", href: "https://instagram.com/smkn2sumedang.official" },
+      { label: "Facebook", href: "https://www.facebook.com/officialsmkn2sumedang.sch.id" },
+      { label: "Tik Tok", href: "https://tiktok.com/@smkn2sumedang.official" },
     ],
   },
 ];
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="bg-[#FBF5F3] pt-10 sm:pt-16 lg:pt-24">
       <div className="relative overflow-hidden bg-[radial-gradient(ellipse_at_center,#3b1d6e_0%,#6b2a9a_60%,#8e3bb8_100%)] text-white">
         {/* gelombang: tinggi menyesuaikan ukuran layar */}
         <svg
-          className="absolute left-0 top-0 h-[40px] w-full fill-purple-50 sm:h-[70px] lg:h-[110px]"
+          className="absolute left-0 -top-px h-10 w-full fill-[#FBF5F3] sm:h-17.5 lg:h-27.5"
           viewBox="0 0 1440 110"
           preserveAspectRatio="none"
           aria-hidden="true"
@@ -49,7 +57,7 @@ export default function Footer() {
 
         {/* logo bulat + tulisan PILAR */}
         <div className="relative flex flex-col items-center pt-4 sm:pt-6 lg:pt-8">
-          <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-purple-600 bg-slate-50 sm:h-24 sm:w-24 lg:h-[120px] lg:w-[120px]">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-purple-600 bg-slate-50 sm:h-24 sm:w-24 lg:h-30 lg:w-30">
             <Image
               src="/images/logo.png"
               alt="Logo PILAR"
@@ -71,7 +79,7 @@ export default function Footer() {
 </div>
 
         {/* kolom link: 2 kolom di HP, 3 kolom di layar >= sm */}
-        <div className="mx-auto grid max-w-3xl grid-cols-2 gap-x-4 gap-y-8 px-6 py-8 sm:grid-cols-3 sm:py-10">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-4 gap-y-8 px-4 py-8 sm:grid-cols-4 sm:px-6 sm:py-10">
           {kolom.map((k) => (
             <div key={k.judul}>
               <h3 className="text-base font-medium sm:text-lg">{k.judul}</h3>
@@ -91,13 +99,9 @@ export default function Footer() {
         {/* bagian bawah */}
         <div className="mx-auto max-w-6xl px-4 pb-6 sm:px-6">
           <div className="border-t border-white/70" />
-          <div className="mt-6 flex flex-col items-center gap-3 text-center text-xs sm:flex-row sm:justify-between sm:text-left">
-            <div className="flex gap-6 underline">
-              <Link href="#">Kebijakan Privasi</Link>
-              <Link href="#">Syarat Layanan</Link>
-            </div>
-            <p>© {new Date().getFullYear()} Pusat Informasi Tempat PKL</p>
-          </div>
+         <div className="mt-6 flex justify-center text-xs sm:justify-end">
+  <p>© {new Date().getFullYear()} Pusat Informasi Tempat PKL</p>
+</div>
         </div>
       </div>
     </footer>

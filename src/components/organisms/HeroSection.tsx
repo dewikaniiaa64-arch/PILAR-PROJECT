@@ -4,7 +4,7 @@ import Button from "../atoms/button";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-purple-50">
+    <section id="beranda"className="relative overflow-hidden bg-purple-50">
       {/* lingkaran dekoratif */}
       <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-purple-200 sm:-right-10 sm:-top-10 sm:h-44 sm:w-44" />
       <div className="absolute -right-6 top-4 h-24 w-24 rounded-full bg-purple-400 sm:-right-8 sm:top-6 sm:h-36 sm:w-36" />
