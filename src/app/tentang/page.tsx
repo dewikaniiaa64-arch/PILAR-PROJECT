@@ -4,10 +4,8 @@ export default function TentangPage() {
   return (
     <main className="w-full">
       {/* ===== BANNER FULL LEBAR ===== */}
-      <section className="relative w-full overflow-hidden">
-        {/* FOTO BACKGROUND
-            HP: menutupi seluruh section (object-cover)
-            md+: lebar penuh, tinggi mengikuti rasio foto */}
+      <section id="tentang" className="relative w-full overflow-hidden">
+        {/* FOTO BACKGROUND (lebar penuh, tinggi mengikuti rasio foto) */}
         <img
           src="/images/bg-about.jpg"
           alt=""

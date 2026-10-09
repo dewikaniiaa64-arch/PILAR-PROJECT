@@ -23,7 +23,7 @@ export default function ContactCard({
   links,
 }: ContactCardProps) {
   return (
-    <div className="flex w-full gap-4 rounded-2xl border border-gray-400 bg-purple-100 p-6 md:w-105">
+    <div className="flex w-full gap-4 rounded-2xl border border-purple-300 bg-purple-100 p-6 md:w-105">
       <Image
         src="/images/icons/admin.svg"
         alt=""
