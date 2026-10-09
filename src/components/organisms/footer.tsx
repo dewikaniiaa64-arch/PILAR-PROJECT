@@ -39,7 +39,7 @@ export default function Footer() {
       <div className="relative overflow-hidden bg-[radial-gradient(ellipse_at_center,#3b1d6e_0%,#6b2a9a_60%,#8e3bb8_100%)] text-white">
         {/* gelombang: tinggi menyesuaikan ukuran layar */}
         <svg
-          className="absolute left-0 top-0 h-[40px] w-full fill-purple-50 sm:h-[70px] lg:h-[110px]"
+          className="absolute left-0 top-0 h-40px w-full fill-purple-50 sm:h-70px lg:h-110px"
           viewBox="0 0 1440 110"
           preserveAspectRatio="none"
           aria-hidden="true"
@@ -49,7 +49,7 @@ export default function Footer() {
 
         {/* logo bulat + tulisan PILAR */}
         <div className="relative flex flex-col items-center pt-4 sm:pt-6 lg:pt-8">
-          <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-purple-600 bg-slate-50 sm:h-24 sm:w-24 lg:h-[120px] lg:w-[120px]">
+          <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-purple-600 bg-slate-50 sm:h-24 sm:w-24 lg:h-120px lg:w-120px">
             <Image
               src="/images/logo.png"
               alt="Logo PILAR"

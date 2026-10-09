@@ -38,11 +38,11 @@ export default function FaqSection() {
             Hubungi kami jika kamu butuh bantuan lebih lanjut.
           </p>
           <a
-  href="/kontak"
-  className="inline-block rounded-lg border border-[#5A0FB6] bg-gradient-to-r from-[#5A0FB6] via-[#6912DA] to-[#670AD7]/60 px-8 py-2.5 text-lg font-medium text-white transition hover:opacity-90"
->
-  Kontak
-</a>
+            href="/kontak"
+            className="inline-block rounded-lg border border-[#5A0FB6] bg-linear-to-r from-[#5A0FB6] via-[#6912DA] to-[#670AD7]/60 px-8 py-2.5 text-lg font-medium text-white transition hover:opacity-90"
+          >
+            Kontak
+          </a>
         </div>
       </div>
     </section>
