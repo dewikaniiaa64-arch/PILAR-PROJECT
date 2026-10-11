@@ -63,7 +63,7 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <Button href="/admin">Admin</Button>
+           <Button href="/admin/login">Admin</Button>
           </li>
         </ul>
 
@@ -93,9 +93,9 @@ export default function Navbar() {
             </li>
           ))}
           <li className="pt-2">
-            <Button href="/admin" className="w-full text-center">
-              Admin
-            </Button>
+           <Button href="/admin" className="w-full text-center">
+  Admin
+</Button>
           </li>
         </ul>
       )}
