@@ -42,6 +42,7 @@ const kontak = [
 export default function ContactSection() {
   return (
     <section
+    id="kontak"
   className={`${roboto.className} bg-purple-50 px-4 py-12 sm:px-6 sm:py-16`}
 >
       <div className="mx-auto max-w-6xl">

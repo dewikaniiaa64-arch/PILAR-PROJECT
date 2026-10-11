@@ -43,11 +43,11 @@ const kolom = [
 
 export default function Footer() {
   return (
-    <footer >
+    <footer className="bg-[#FBF5F3] pt-10 sm:pt-16 lg:pt-24">
       <div className="relative overflow-hidden bg-[radial-gradient(ellipse_at_center,#3b1d6e_0%,#6b2a9a_60%,#8e3bb8_100%)] text-white">
         {/* gelombang: tinggi menyesuaikan ukuran layar */}
         <svg
-          className="absolute left-0 -top-px h-10 w-full fill-gray-100 sm:h-17.5 lg:h-27.5"
+          className="absolute left-0 -top-px h-10 w-full fill-[#FBF5F3] sm:h-17.5 lg:h-27.5"
           viewBox="0 0 1440 110"
           preserveAspectRatio="none"
           aria-hidden="true"

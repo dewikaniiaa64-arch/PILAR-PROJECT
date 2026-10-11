@@ -52,7 +52,7 @@ const steps = [
 
 export default function StepsSection() {
   return (
-    <section className="w-full min-h-screen bg-purple-50 py-16 px-6 md:px-12 lg:px-20 flex items-center">
+    <section id="informasi" className="w-full min-h-screen bg-purple-50 py-16 px-6 md:px-12 lg:px-20 flex items-center">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:gap-20">
           <h2 className="max-w-xl text-2xl font-bold leading-snug text-black sm:text-3xl md:max-w-2xl md:text-4xl lg:text-5xl">

@@ -22,7 +22,7 @@ export default function PlaceSearchSection() {
     const tampil = hasil.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
     return (
-        <section className="flex flex-col gap-4 sm:gap-6">
+        <section id="pencarian" className="flex flex-col gap-4 sm:gap-6">
             {/* ==== Filter Box ==== */}
             <div className="rounded-lg border border-purple-400 p-3 sm:p-4 md:p-6">
                 <div className="flex flex-col gap-2 sm:gap-3 md:flex-row md:items-center">

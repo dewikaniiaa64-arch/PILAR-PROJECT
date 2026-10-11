@@ -12,6 +12,8 @@
   --font-sans: var(--font-roboto);
   /* DIUBAH: dari var(--font-geist-mono) */
   --font-mono: var(--font-roboto);
+  --font-sekuya: var(--font-sekuya);
+  --font-montserrat: var(--font-montserrat);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -41,4 +43,12 @@ body {
   .kategori-container button {
     flex: 1;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section[id] {
+  scroll-margin-top: 5rem;
 }
