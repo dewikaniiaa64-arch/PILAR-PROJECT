@@ -1,3 +1,9 @@
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 import AdminSidebar from "@/components/organisms/AdminSidebar";
 
 export default function AdminLayout({

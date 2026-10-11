@@ -7,6 +7,13 @@ import Footer from "../organisms/footer";
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
+  const halamanAdmin = pathname.startsWith("/admin");
+
+  // halaman admin & login: tampilkan isinya saja, tanpa Navbar dan Footer
+  if (halamanAdmin) {
+    return <>{children}</>;
+  }
+
   const isAdmin = pathname.startsWith("/admin");
 
   // Kalau di halaman admin → tidak pakai navbar & footer
