@@ -7,8 +7,8 @@ export default function TentangPage() {
       <section id="tentang" className="relative w-full overflow-hidden">
         {/* FOTO BACKGROUND (lebar penuh, tinggi mengikuti rasio foto) */}
         <img
-          src="/images/bg-about.jpg"
-          alt=""
+          src="/images/bg-about.jpeg"
+          alt="background"
           className="absolute inset-0 block h-full w-full select-none object-cover object-right md:static md:h-auto md:object-contain"
           draggable={false}
         />

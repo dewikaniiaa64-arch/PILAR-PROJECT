@@ -34,7 +34,7 @@ export default async function DetailTempatPage({ params }: Props) {
                     {/* KOLOM KIRI: Gambar & Card Info */}
                     <div className="flex flex-col gap-4 sm:gap-6">
                         {/* Gambar Utama */}
-                        <div className="w-full aspect-video md:aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100">
+                        <div className="w-full aspect-video md:aspect-4/3 rounded-2xl overflow-hidden bg-gray-100">
                             {place.foto && place.foto[0] ? (
                                 <img
                                     src={place.foto[0]}
