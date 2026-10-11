@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Roboto } from "next/font/google";
 import MainLayout from "@/components/templates/MainLayout";
 import "./globals.css";
+import localFont from "next/font/local";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -17,6 +18,12 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
+const sekuya = localFont({
+  src: "./font/Sekuya-Regular.ttf",
+  variable: "--font-sekuya",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "PILAR | Pusat Informasi Lapangan & Relasi",
   description: "Cari dan temukan tempat PKL yang sesuai dengan jurusanmu.",
@@ -28,8 +35,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className={`${montserrat.variable} ${roboto.variable}`}>
-      {/* DIUBAH: montserrat.className -> roboto.className */}
+    <html
+      lang="id"
+      className={`${montserrat.variable} ${roboto.variable} ${sekuya.variable}`}
+
+    >
       <body className={roboto.className}>
         <MainLayout>{children}</MainLayout>
       </body>

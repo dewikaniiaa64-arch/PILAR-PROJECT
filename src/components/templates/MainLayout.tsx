@@ -14,6 +14,14 @@ export default function MainLayout({ children }: { children: ReactNode }) {
     return <>{children}</>;
   }
 
+  const isAdmin = pathname.startsWith("/admin");
+
+  // Kalau di halaman admin → tidak pakai navbar & footer
+  if (isAdmin) {
+    return <>{children}</>;
+  }
+
+  // Halaman publik → pakai navbar & footer seperti biasa
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
