@@ -62,9 +62,6 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-           <Button href="/admin/login">Admin</Button>
-          </li>
         </ul>
 
         {/* tombol hamburger (HP) */}
@@ -92,11 +89,6 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li className="pt-2">
-           <Button href="/admin" className="w-full text-center">
-  Admin
-</Button>
-          </li>
         </ul>
       )}
     </header>
