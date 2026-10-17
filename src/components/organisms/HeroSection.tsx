@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Button from "../atoms/button";
+import { gulirKe } from "@/lib/utils";
 
 
 export default function HeroSection() {
@@ -36,9 +38,14 @@ export default function HeroSection() {
             tempat, bidang kegiatan, dan lokasinya dalam satu platform
             terstruktur.
           </p>
-          <Button href="/pencarian" variant="outline" className="mt-6 sm:mt-8">
-            Jelajahi
-          </Button>
+          <Button
+  href="/#pencarian"
+  variant="hero"
+  className="mt-6 sm:mt-8"
+  onClick={(e) => gulirKe(e, "pencarian")}
+>
+  Jelajahi
+</Button>
         </div>
       </div>
     </section>
