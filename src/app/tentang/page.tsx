@@ -36,7 +36,7 @@ export default function TentangPage() {
             </h1>
 
             <p className="mb-3 text-sm leading-relaxed text-[#42106D] sm:text-base md:mb-3 md:text-xs md:leading-snug lg:text-sm xl:text-base">
-              <span className="font-semibold">PILAR</span> (Pusat Informasi Dan
+              <span className="font-semibold">PILAR</span> (Pusat Informasi Lapangan &
               Relasi) adalah platform yang membantu siswa menemukan dan
               mendapatkan informasi mengenai tempat Praktik Kerja Lapangan (PKL)
               yang sesuai dengan jurusan dan bidang yang diminati.
@@ -53,7 +53,6 @@ export default function TentangPage() {
                 siswa PKL.
               </li>
               <li>Membantu siswa menemukan tempat PKL sesuai jurusan.</li>
-              <li>Mempermudah proses pengajuan PKL.</li>
             </ul>
           </div>
         </div>
