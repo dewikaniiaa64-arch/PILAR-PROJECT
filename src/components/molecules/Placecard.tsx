@@ -22,8 +22,7 @@ export default function PlaceCard({ place }: { place: Place }) {
                 ))}
             </div>
             <Link
-                href={`/tempat/${place.id}`}
-                className="mt-auto rounded bg-linear-to-r from-[#5A0FB6] via-[#6912DA] to-[#670AD799] py-2 sm:py-3 text-center text-xs sm:text-sm font-semibold text-white hover:opacity-90 transition"
+                href={`/tempat/${place.documentId}`} className="mt-auto rounded bg-linear-to-r from-[#5A0FB6] via-[#6912DA] to-[#670AD799] py-2 sm:py-3 text-center text-xs sm:text-sm font-semibold text-white hover:opacity-90 transition"
             >
                 Lihat Detail &gt;
             </Link>

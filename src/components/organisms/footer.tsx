@@ -79,7 +79,7 @@ export default function Footer() {
 </div>
 
         {/* kolom link: 2 kolom di HP, 3 kolom di layar >= sm */}
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-4 gap-y-8 px-4 py-8 sm:grid-cols-4 sm:px-6 sm:py-10">
+       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-y-6 px-6 py-8 sm:grid-cols-4 sm:gap-x-4 sm:gap-y-8 sm:py-10">
           {kolom.map((k) => (
             <div key={k.judul}>
               <h3 className="text-base font-medium sm:text-lg">{k.judul}</h3>
