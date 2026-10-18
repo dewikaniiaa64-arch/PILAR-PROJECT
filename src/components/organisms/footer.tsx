@@ -31,7 +31,7 @@ const kolom = [
       { label: "Kontak", href: "/#kontak" },
     ],
   },
-   {
+  {
     judul: "Sosial",
     link: [
       { label: "Instagram", href: "https://instagram.com/smkn2sumedang.official" },
@@ -45,9 +45,13 @@ export default function Footer() {
   return (
     <footer>
       <div className="relative overflow-hidden bg-[radial-gradient(ellipse_at_center,#3b1d6e_0%,#6b2a9a_60%,#8e3bb8_100%)] text-white">
-        {/* gelombang: tinggi menyesuaikan ukuran layar */}
+        
+        {/* ===== WAVE ===== 
+            Mobile: fill-gray-50
+            Desktop: fill-gray-100 (md:fill-gray-100)
+        */}
         <svg
-          className="absolute left-0 -top-px h-10 w-full fill-gray-100 sm:h-17.5 lg:h-27.5"
+          className="absolute left-0 -top-px h-10 w-full fill-gray-50 sm:h-17.5 md:fill-gray-100 lg:h-27.5"
           viewBox="0 0 1440 110"
           preserveAspectRatio="none"
           aria-hidden="true"
@@ -55,7 +59,7 @@ export default function Footer() {
           <path d="M0,0 L160,0 C230,0 250,107 311,107 C400,107 410,20 498,20 C590,20 620,107 720,107 C820,107 850,20 942,20 C1030,20 1050,107 1129,107 C1190,107 1210,0 1290,0 L1440,0 Z" />
         </svg>
 
-        {/* logo bulat + tulisan PILAR */}
+        {/* Logo bulat + tulisan PILAR */}
         <div className="relative flex flex-col items-center pt-4 sm:pt-6 lg:pt-8">
           <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-purple-600 bg-slate-50 sm:h-24 sm:w-24 lg:h-30 lg:w-30">
             <Image
@@ -73,13 +77,13 @@ export default function Footer() {
           </p>
         </div>
 
-       {/* garis putus-putus */}
-<div className="mx-auto max-w-6xl px-4 sm:px-6">
-  <div className="mt-6 border-t border-dotted border-white/70" />
-</div>
+        {/* Garis putus-putus */}
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="mt-6 border-t border-dotted border-white/70" />
+        </div>
 
-        {/* kolom link: 2 kolom di HP, 3 kolom di layar >= sm */}
-       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-y-6 px-6 py-8 sm:grid-cols-4 sm:gap-x-4 sm:gap-y-8 sm:py-10">
+        {/* Kolom link */}
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-y-6 px-6 py-8 sm:grid-cols-4 sm:gap-x-4 sm:gap-y-8 sm:py-10">
           {kolom.map((k) => (
             <div key={k.judul}>
               <h3 className="text-base font-medium sm:text-lg">{k.judul}</h3>
@@ -96,12 +100,12 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* bagian bawah */}
+        {/* Bagian bawah */}
         <div className="mx-auto max-w-6xl px-4 pb-6 sm:px-6">
           <div className="border-t border-white/70" />
-         <div className="mt-6 flex justify-center text-xs sm:justify-end">
-  <p>© {new Date().getFullYear()} Pusat Informasi Tempat PKL</p>
-</div>
+          <div className="mt-6 flex justify-center text-xs sm:justify-end">
+            <p>© {new Date().getFullYear()} Pusat Informasi Tempat PKL</p>
+          </div>
         </div>
       </div>
     </footer>
