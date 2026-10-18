@@ -71,7 +71,7 @@ export default function PlaceSearchSection() {
                     <button
                         type="button"
                         aria-label="Cari"
-                        className="flex h-9 w-9 shrink-0 items-center justify-center self-end rounded bg-linear-to-b from-[#5A0FB6] to-[#C4A5EC] text-white hover:opacity-90 sm:self-auto"
+                        className="flex w-full h-10 items-center justify-center gap-2 rounded bg-linear-to-b from-[#5A0FB6] to-[#C4A5EC] text-white font-medium hover:opacity-90 md:w-10 shrink-0 transition-all"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
