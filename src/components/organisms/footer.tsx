@@ -27,7 +27,7 @@ const kolom = [
   {
     judul: "Bantuan",
     link: [
-      { label: "FAQ", href: "/#informasi" },
+      { label: "FAQ", href: "/#faq" },
       { label: "Kontak", href: "/#kontak" },
     ],
   },
