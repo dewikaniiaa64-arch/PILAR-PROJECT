@@ -35,10 +35,8 @@ export default function PlaceListItem({ place }: { place: Place }) {
             {/* Tombol Kanan (Teks Ungu Saja) */}
             <div className="shrink-0 flex items-start pt-0.5 sm:pt-0">
                 <Link
-                    href={`/tempat/${place.id}`}
-                    className="text-xs font-semibold text-[#5A0FB6] hover:text-[#42106D] transition"
-                >
-                    Lihat Detail
+                    href={`/tempat/${place.documentId}`} className="text-xs font-semibold text-[#5A0FB6] hover:text-[#42106D] transition">
+                    Lihat Detail &gt;
                 </Link>
             </div>
         </div>

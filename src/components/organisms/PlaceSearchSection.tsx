@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { places } from "../../data/places";
+import { useState, useEffect } from "react";
 import { filterPlaces } from "../../lib/filterPlaces";
-import { JURUSAN, KATEGORI } from "../../lib/constants";
 import PlaceCard from "../molecules/Placecard";
 import PlaceListItem from "../molecules/PlaceListitem";
 import Pagination from "../molecules/pagination";
+import { getTempatPKL, mapStrapiData, getKategori, getJurusan } from "../../lib/api";
+import { Place } from "../../types/place";
+
+// IMPORT SKELETON
+import PlaceCardSkeleton from "../molecules/PlaceCardSkeleton";
+import PlaceListItemSkeleton from "../molecules/PlaceListItemSkeleton";
 
 const PAGE_SIZE = 6;
 
@@ -17,7 +21,35 @@ export default function PlaceSearchSection() {
     const [view, setView] = useState<"grid" | "list">("grid");
     const [page, setPage] = useState(1);
 
-    const hasil = filterPlaces(places, query, jurusan, kategori);
+    const [dataPlaces, setDataPlaces] = useState<Place[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+    // State untuk menampung data dropdown dari API
+    const [listKategori, setListKategori] = useState<string[]>([]);
+    const [listJurusan, setListJurusan] = useState<string[]>([]);
+
+    // Ambil semua data dari API secara paralel
+    useEffect(() => {
+        async function fetchData() {
+            setIsLoading(true);
+
+            const [rawPlaces, rawKategori, rawJurusan] = await Promise.all([
+                getTempatPKL(),
+                getKategori(),
+                getJurusan()
+            ]);
+
+            const formattedData = rawPlaces.map(mapStrapiData);
+            setDataPlaces(formattedData);
+            setListKategori(rawKategori);
+            setListJurusan(rawJurusan);
+
+            setIsLoading(false);
+        }
+        fetchData();
+    }, []);
+
+    const hasil = filterPlaces(dataPlaces, query, jurusan, kategori);
     const totalPages = Math.ceil(hasil.length / PAGE_SIZE);
     const tampil = hasil.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
@@ -36,8 +68,8 @@ export default function PlaceSearchSection() {
                         className="flex-1 rounded border border-purple-400 px-3 py-2 text-sm text-[#430F829E] placeholder:text-[#430F829E] focus:outline-none focus:ring-1 focus:ring-purple-500"
                     />
 
-                    {/* Dropdown Jurusan & Kategori — Sejajar di mobile */}
                     <div className="flex flex-col gap-2 sm:flex-row sm:gap-3 md:contents">
+                        {/* Dropdown Jurusan */}
                         <select
                             value={jurusan}
                             onChange={(e) => {
@@ -47,11 +79,12 @@ export default function PlaceSearchSection() {
                             className="rounded border border-purple-400 px-3 py-2 text-sm text-purple-900 md:w-56"
                         >
                             <option value="">Jurusan</option>
-                            {JURUSAN.map((j) => (
+                            {listJurusan.map((j) => (
                                 <option key={j} value={j}>{j}</option>
                             ))}
                         </select>
 
+                        {/* Dropdown Kategori */}
                         <select
                             value={kategori}
                             onChange={(e) => {
@@ -61,18 +94,18 @@ export default function PlaceSearchSection() {
                             className="rounded border border-purple-400 px-3 py-2 text-sm text-purple-900 md:w-56"
                         >
                             <option value="">Semua Kategori</option>
-                            {KATEGORI.map((k) => (
+                            {listKategori.map((k) => (
                                 <option key={k} value={k}>{k}</option>
                             ))}
                         </select>
                     </div>
 
-                    {/* Tombol Cari */}
                     <button
                         type="button"
                         aria-label="Cari"
                         className="flex w-full h-10 items-center justify-center gap-2 rounded bg-linear-to-b from-[#5A0FB6] to-[#C4A5EC] text-white font-medium hover:opacity-90 md:w-10 shrink-0 transition-all"
                     >
+                        <span className="md:hidden">Cari</span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24"
@@ -133,8 +166,22 @@ export default function PlaceSearchSection() {
                 </button>
             </div>
 
-            {/* ==== Hasil ==== */}
-            {hasil.length === 0 ? (
+            {/* ==== Hasil / Loading State ==== */}
+            {isLoading ? (
+                view === "grid" ? (
+                    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        {[...Array(6)].map((_, index) => (
+                            <PlaceCardSkeleton key={index} />
+                        ))}
+                    </div>
+                ) : (
+                    <div className="flex flex-col gap-3">
+                        {[...Array(4)].map((_, index) => (
+                            <PlaceListItemSkeleton key={index} />
+                        ))}
+                    </div>
+                )
+            ) : hasil.length === 0 ? (
                 <p className="py-10 text-center text-sm text-gray-500">
                     Tempat PKL tidak ditemukan. Coba kata kunci atau filter lain.
                 </p>
@@ -152,7 +199,10 @@ export default function PlaceSearchSection() {
                 </div>
             )}
 
-            <Pagination page={page} totalPages={totalPages} onChange={setPage} />
+            {/* Sembunyikan pagination saat loading */}
+            {!isLoading && hasil.length > 0 && (
+                <Pagination page={page} totalPages={totalPages} onChange={setPage} />
+            )}
         </section>
     );
 }
