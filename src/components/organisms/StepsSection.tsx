@@ -16,7 +16,7 @@ const steps = [
     ),
     title: "Cari tempat yang sesuai minatmu",
     description:
-      "Gunakan fitur pencarian untuk menemukan tempat PKL berdasarkan bidang atau lokasi yang kamu inginkan.",
+      "Gunakan fitur pencarian untuk menentukan tempat PKL berdasarkan bidang yang kamu inginkan.",
   },
   {
     // DIUBAH: SVG dipanggil langsung, tanpa pembungkus dan tanpa filter
@@ -46,7 +46,7 @@ const steps = [
     ),
     title: "Tentukan pilihan terbaikmu",
     description:
-      "Bandingkan pilihan yang ada dan putuskan tempat PKL yang paling cocok untukmu.",
+      "Tentukan tempat PKL yang paling cocok untukmu.",
   },
 ];
 
