@@ -14,7 +14,7 @@ const kontak = [
       "Untuk kendala atau pertanyaan mengenai Website dan informasi tempat PKL",
     links: [
       { label: "WhatsApp", href: "https://wa.me/6281325463214", tipe: "whatsapp" },
-      { label: "Email", href: "mailto:admin@pilar.example", tipe: "email" },
+      { label: "Email", href: "mailto:cantikakhrnns@gmail.com", tipe: "email" },
     ],
   },
   {
@@ -56,7 +56,7 @@ export default function ContactSection() {
         </p>
 
         {/* 2 kartu di atas, kartu ke-3 otomatis di tengah bawah */}
-        <div className="mt-12 flex flex-wrap justify-center gap-6 md:mt-14 md:gap-x-20">
+        <div className="mt-12 flex flex-wrap justify-center gap-6 md:mt-14 md:gap-x-21.75 md:gap-y-7.75">
           {kontak.map((k) => (
             <ContactCard
               key={k.judul}

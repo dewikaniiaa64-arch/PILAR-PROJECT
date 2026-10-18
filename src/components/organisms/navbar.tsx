@@ -76,21 +76,24 @@ export default function Navbar() {
       </nav>
 
       {/* menu HP */}
-      {open && (
-        <ul className="border-t border-purple-100 bg-slate-50 px-4 pb-4 md:hidden">
-          {menu.map((item) => (
-            <li key={item.id} className="py-3">
-              <Link
-                href={`/#${item.id}`}
-                onClick={() => setOpen(false)}
-                className={gayaMenu(item.id)}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
+     {/* menu HP: kartu dropdown di kanan */}
+{open && (
+  <ul className="absolute right-4 top-full mt-2 w-56 divide-y divide-slate-100 overflow-hidden rounded-xl bg-white shadow-lg ring-1 ring-black/5 sm:right-8 md:hidden">
+    {menu.map((item) => (
+      <li key={item.id}>
+        <Link
+          href={`/#${item.id}`}
+          onClick={() => setOpen(false)}
+          className={`block px-4 py-3 text-sm text-purple-900 hover:bg-purple-50 ${
+            aktif === item.id ? "bg-purple-50 font-semibold" : ""
+          }`}
+        >
+          {item.label}
+        </Link>
+      </li>
+    ))}
+  </ul>
+)}
     </header>
   );
 }
