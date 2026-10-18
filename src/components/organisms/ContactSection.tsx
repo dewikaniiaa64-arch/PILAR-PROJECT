@@ -23,7 +23,7 @@ const kontak = [
       "Untuk informasi umum mengenai PKL termasuk kebijakan dan ketentuan yang berlaku.",
     links: [
       { label: "WhatsApp", href: "https://wa.me/628122250189", tipe: "whatsapp" },
-      { label: "Email", href: "mailto:hubin@pilar.example", tipe: "email" },
+      { label: "Email", href: "mailto:alyanafisasyirin@gmail.com", tipe: "email" },
     ],
   },
   {
@@ -32,7 +32,7 @@ const kontak = [
       "Untuk kendala atau pertanyaan mengenai Website dan informasi tempat PKL",
     links: [
       { label: "AKL", href: "https://wa.me/6289665345365", tipe: "whatsapp" },
-      { label: "PM", href: "https://wa.me/6281234567893", tipe: "whatsapp" },
+      { label: "PM", href: "https://wa.me/6282119780098", tipe: "whatsapp" },
       { label: "MPLB", href: "https://wa.me/6282167489238", tipe: "whatsapp" },
       { label: "PPLG", href: "https://wa.me/6285224303770", tipe: "whatsapp" },
     ],
