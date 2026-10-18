@@ -4,7 +4,6 @@ import { faqs } from "@/data/faqs";
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="w-full min-h-screen bg-white py-16 px-6 md:px-12 lg:px-20">
     <section className="w-full min-h-screen bg-white py-16 px-6 md:px-12 lg:px-20">
       <div className="mx-auto max-w-2xl">
         {/* Judul */}

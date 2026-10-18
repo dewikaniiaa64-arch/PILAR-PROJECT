@@ -56,7 +56,6 @@ export default function TentangPage() {
                 siswa PKL.
               </li>
               <li>Membantu siswa menemukan tempat PKL sesuai jurusan.</li>
-              <li>Mempermudah proses pengajuan PKL.</li>
             </ul>
           </div>
         </div>
