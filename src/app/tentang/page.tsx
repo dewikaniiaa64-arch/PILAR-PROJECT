@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TentangPage() {
   return (
-    <main className="w-full bg-gray-50">
+    <main className="w-full bg-gray-100">
       {/* ===== BANNER FULL LEBAR ===== */}
       <section id="tentang" className="relative w-full overflow-hidden">
         
