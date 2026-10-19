@@ -2,18 +2,21 @@ import React from "react";
 
 export default function TentangPage() {
   return (
-    <main className="w-full">
+    <main className="w-full bg-gray-100">
       {/* ===== BANNER FULL LEBAR ===== */}
       <section id="tentang" className="relative w-full overflow-hidden">
-        {/* FOTO BACKGROUND (lebar penuh, tinggi mengikuti rasio foto) */}
+        
+        {/* FOTO BACKGROUND 
+            Mobile: HILANG (hidden)
+            Desktop: MUNCUL (md:block) nempel ke bawah (md:object-bottom) */}
         <img
           src="/images/bg-about.jpeg"
           alt="background"
-          className="absolute inset-0 block h-full w-full select-none object-cover object-right md:static md:h-auto md:object-contain"
+          className="absolute inset-0 hidden h-full w-full select-none object-cover object-right md:static md:block md:h-auto md:object-contain md:object-bottom"
           draggable={false}
         />
 
-        {/* lapisan putih tipis agar teks terbaca di HP */}
+        {/* lapisan putih tipis agar teks terbaca di HP (bisa dibiarkan aja) */}
         <div className="absolute inset-0 bg-white/75 md:hidden" />
 
         {/* KONTEN

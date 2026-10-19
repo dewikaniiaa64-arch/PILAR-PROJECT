@@ -22,7 +22,7 @@ export default async function DetailTempatPage({ params }: Props) {
             <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
                 {/* Tombol Kembali */}
                 <Link
-                    href="/pencarian"
+                    href="/#pencarian"
                     className="inline-flex items-center text-[#2D015C] font-semibold mb-6 sm:mb-8 hover:underline text-sm sm:text-base"
                 >
                     <span className="mr-2">←</span> Kembali
