@@ -78,7 +78,7 @@ export default function PlaceSearchSection() {
                             }}
                             className="rounded border border-purple-400 px-3 py-2 text-sm text-purple-900 md:w-56"
                         >
-                            <option value="">Jurusan</option>
+                            <option value=""></option>
                             {listJurusan.map((j) => (
                                 <option key={j} value={j}>{j}</option>
                             ))}
@@ -93,7 +93,7 @@ export default function PlaceSearchSection() {
                             }}
                             className="rounded border border-purple-400 px-3 py-2 text-sm text-purple-900 md:w-56"
                         >
-                            <option value="">Semua Kategori</option>
+                            <option value=""></option>
                             {listKategori.map((k) => (
                                 <option key={k} value={k}>{k}</option>
                             ))}
