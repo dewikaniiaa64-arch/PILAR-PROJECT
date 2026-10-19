@@ -69,7 +69,6 @@ export default function PlaceSearchSection() {
                     />
 
                     <div className="flex flex-col gap-2 sm:flex-row sm:gap-3 md:contents">
-                        {/* Dropdown Jurusan */}
                         <select
                             value={jurusan}
                             onChange={(e) => {
@@ -78,13 +77,16 @@ export default function PlaceSearchSection() {
                             }}
                             className="rounded border border-purple-400 px-3 py-2 text-sm text-purple-900 md:w-56"
                         >
-                            <option value=""></option>
+                            {/* Teks ini hanya muncul sebagai placeholder, tidak bisa dipilih */}
+                            <option value="" disabled hidden>
+                                Pilih Jurusan
+                            </option>
+
                             {listJurusan.map((j) => (
                                 <option key={j} value={j}>{j}</option>
                             ))}
                         </select>
 
-                        {/* Dropdown Kategori */}
                         <select
                             value={kategori}
                             onChange={(e) => {
@@ -93,7 +95,11 @@ export default function PlaceSearchSection() {
                             }}
                             className="rounded border border-purple-400 px-3 py-2 text-sm text-purple-900 md:w-56"
                         >
-                            <option value=""></option>
+                            {/* Teks ini hanya muncul sebagai placeholder, tidak bisa dipilih */}
+                            <option value="" disabled hidden>
+                                Pilih Kategori
+                            </option>
+
                             {listKategori.map((k) => (
                                 <option key={k} value={k}>{k}</option>
                             ))}
