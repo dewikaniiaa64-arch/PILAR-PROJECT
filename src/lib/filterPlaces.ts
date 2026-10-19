@@ -10,8 +10,11 @@ export function filterPlaces(
 
     return places.filter((p) => {
         const cocokNama = p.nama.toLowerCase().includes(q);
-        const cocokJurusan = jurusan === "" || p.jurusan.includes(jurusan);
-        const cocokKategori = kategori === "" || p.kategori.includes(kategori);
+
+
+        const cocokJurusan = jurusan === "" || p.jurusan.some((j) => j.trim() === jurusan.trim());
+        const cocokKategori = kategori === "" || p.kategori.some((k) => k.trim() === kategori.trim());
+
         return cocokNama && cocokJurusan && cocokKategori;
     });
 }
