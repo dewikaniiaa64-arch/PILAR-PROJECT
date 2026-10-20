@@ -1,9 +1,15 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+type StrapiMasterData = {
+    data: { id: number; nama: string }[];
+};
+
+// 1. Fungsi Ambil Tempat PKL (Ditambah limit 100)
 export async function getTempatPKL() {
     try {
-        const response = await fetch(`${API_URL}/tempat-pkls?populate=*`, {
-            cache: "no-store", // Selalu ambil data terbaru
+        // Menambahkan &pagination[limit]=100 agar mengambil semua data
+        const response = await fetch(`${API_URL}/tempat-pkls?populate=*&pagination[limit]=100`, {
+            cache: "no-store",
         });
 
         if (!response.ok) {
@@ -11,15 +17,14 @@ export async function getTempatPKL() {
         }
 
         const result = await response.json();
-        return result.data || []; // Kembalikan array kosong jika data null
+        return result.data || [];
     } catch (error) {
         console.error("Error fetching tempat PKL:", error);
-        return []; // Kalau error, kembalikan array kosong agar UI tidak crash
+        return [];
     }
 }
-// ... kode getTempatPKL tetap ada ...
 
-// Fungsi untuk menerjemahkan data Strapi ke format UI kita
+// 2. Fungsi Penerjemah Data (Mapping)
 export function mapStrapiData(item: any) {
     return {
         id: item.id,
@@ -28,10 +33,8 @@ export function mapStrapiData(item: any) {
         logo: item.logo?.url || null,
         deskripsi: item.card_description || item.deskripsi || "",
         lokasi: item.lokasi_utama || "",
-        // Mengambil array nama dari relasi
         kategori: item.kategori?.map((k: any) => k.nama) || [],
         jurusan: item.jurusans?.map((j: any) => j.nama) || [],
-        // Data tambahan untuk halaman detail (jika nanti dibutuhkan)
         kuota: item.kuota,
         telepon: item.telepon,
         email: item.email,
@@ -40,10 +43,10 @@ export function mapStrapiData(item: any) {
         fotoDetail: item.foto_detail?.url || null,
     };
 }
-// Fungsi untuk mengambil detail 1 tempat berdasarkan Document ID Strapi
+
+// 3. Fungsi Ambil Detail Tempat PKL
 export async function getDetailTempatPKL(documentId: string) {
     try {
-        // Gunakan filter documentId agar URL-nya SEO friendly (bukan pakai ID angka)
         const response = await fetch(`${API_URL}/tempat-pkls?filters[documentId][$eq]=${documentId}&populate=*`, {
             cache: "no-store",
         });
@@ -53,35 +56,41 @@ export async function getDetailTempatPKL(documentId: string) {
         }
 
         const result = await response.json();
-        // Strapi mengembalikan array, kita ambil data pertama
         return result.data && result.data.length > 0 ? result.data[0] : null;
     } catch (error) {
         console.error("Error fetching detail tempat PKL:", error);
         return null;
     }
 }
-// Fungsi untuk mengambil data Kategori dari Strapi
-export async function getKategori() {
+
+// 4. Fungsi Ambil Kategori (Anti-Dobel)
+export async function getKategori(): Promise<string[]> {
     try {
-        const response = await fetch(`${API_URL}/kategoris`, { cache: "no-store" });
+        // Menambahkan limit 100 juga untuk kategori
+        const response = await fetch(`${API_URL}/kategoris?pagination[limit]=100`, { cache: "no-store" });
         if (!response.ok) throw new Error("Gagal mengambil kategori");
-        const result = await response.json();
-        // Ambil array nama kategorinya saja (misal: ["Pendidikan", "Teknologi", ...])
-        return result.data?.map((item: any) => item.nama) || [];
+
+        const result: StrapiMasterData = await response.json();
+
+        const rawKategori = result.data?.map((item) => item.nama.trim()) || [];
+        return Array.from(new Set(rawKategori));
     } catch (error) {
         console.error(error);
         return [];
     }
 }
 
-// Fungsi untuk mengambil data Jurusan dari Strapi
-export async function getJurusan() {
+// 5. Fungsi Ambil Jurusan (Anti-Dobel)
+export async function getJurusan(): Promise<string[]> {
     try {
-        const response = await fetch(`${API_URL}/jurusans`, { cache: "no-store" });
+        // Menambahkan limit 100 juga untuk jurusan
+        const response = await fetch(`${API_URL}/jurusans?pagination[limit]=100`, { cache: "no-store" });
         if (!response.ok) throw new Error("Gagal mengambil jurusan");
-        const result = await response.json();
-        // Ambil array nama jurusannya saja
-        return result.data?.map((item: any) => item.nama) || [];
+
+        const result: StrapiMasterData = await response.json();
+
+        const rawJurusan = result.data?.map((item) => item.nama.trim()) || [];
+        return Array.from(new Set(rawJurusan));
     } catch (error) {
         console.error(error);
         return [];
