@@ -29,7 +29,7 @@ const kontak = [
   {
     judul: "Kaprog",
     deskripsi:
-      "Untuk kendala atau pertanyaan mengenai Website dan informasi tempat PKL",
+      "Untuk konsultasi pemilihan tempat PKL dan kesesuaian bidang dengan jurusanmu.",
     links: [
       { label: "AKL", href: "https://wa.me/6289665345365", tipe: "whatsapp" },
       { label: "PM", href: "https://wa.me/6282119780098", tipe: "whatsapp" },
