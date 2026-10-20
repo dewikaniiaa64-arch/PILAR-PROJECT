@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Logo from "../atoms/logo";
-import Button from "../atoms/button";
+
 
 const menu = [
   { label: "Beranda", id: "beranda" },
@@ -38,10 +38,10 @@ export default function Navbar() {
   }, [pathname]);
 
   const gayaMenu = (id: string) =>
-    `text-sm font-semibold text-purple-900 underline decoration-2 underline-offset-8 transition-colors ${
+    `text-sm font-semibold text-[#2D015C] underline decoration-2 underline-offset-8 transition-colors ${
       aktif === id
-        ? "decoration-purple-900"
-        : "decoration-transparent hover:decoration-purple-300"
+        ? "decoration-[#2D015C]"
+        : "decoration-transparent hover:decoration-[#2D015C]/40"
     }`;
 
   return (
@@ -69,7 +69,7 @@ export default function Navbar() {
           type="button"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Tutup menu" : "Buka menu"}
-          className="rounded p-2 text-purple-900 hover:bg-purple-100 md:hidden"
+          className="rounded p-2 text-[#2D015C] hover:bg-purple-100 md:hidden"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -84,7 +84,7 @@ export default function Navbar() {
         <Link
           href={`/#${item.id}`}
           onClick={() => setOpen(false)}
-          className={`block px-4 py-3 text-sm text-purple-900 hover:bg-purple-50 ${
+          className={`block px-4 py-3 text-sm text-[#2D015C] hover:bg-purple-50 ${
             aktif === item.id ? "bg-purple-50 font-semibold" : ""
           }`}
         >
