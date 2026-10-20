@@ -1,14 +1,14 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-
 type StrapiMasterData = {
     data: { id: number; nama: string }[];
 };
 
-
+// 1. Fungsi Ambil Tempat PKL (Ditambah limit 100)
 export async function getTempatPKL() {
     try {
-        const response = await fetch(`${API_URL}/tempat-pkls?populate=*`, {
+        // Menambahkan &pagination[limit]=100 agar mengambil semua data
+        const response = await fetch(`${API_URL}/tempat-pkls?populate=*&pagination[limit]=100`, {
             cache: "no-store",
         });
 
@@ -24,7 +24,7 @@ export async function getTempatPKL() {
     }
 }
 
-
+// 2. Fungsi Penerjemah Data (Mapping)
 export function mapStrapiData(item: any) {
     return {
         id: item.id,
@@ -44,7 +44,7 @@ export function mapStrapiData(item: any) {
     };
 }
 
-
+// 3. Fungsi Ambil Detail Tempat PKL
 export async function getDetailTempatPKL(documentId: string) {
     try {
         const response = await fetch(`${API_URL}/tempat-pkls?filters[documentId][$eq]=${documentId}&populate=*`, {
@@ -63,10 +63,11 @@ export async function getDetailTempatPKL(documentId: string) {
     }
 }
 
-
+// 4. Fungsi Ambil Kategori (Anti-Dobel)
 export async function getKategori(): Promise<string[]> {
     try {
-        const response = await fetch(`${API_URL}/kategoris`, { cache: "no-store" });
+        // Menambahkan limit 100 juga untuk kategori
+        const response = await fetch(`${API_URL}/kategoris?pagination[limit]=100`, { cache: "no-store" });
         if (!response.ok) throw new Error("Gagal mengambil kategori");
 
         const result: StrapiMasterData = await response.json();
@@ -79,10 +80,11 @@ export async function getKategori(): Promise<string[]> {
     }
 }
 
-
+// 5. Fungsi Ambil Jurusan (Anti-Dobel)
 export async function getJurusan(): Promise<string[]> {
     try {
-        const response = await fetch(`${API_URL}/jurusans`, { cache: "no-store" });
+        // Menambahkan limit 100 juga untuk jurusan
+        const response = await fetch(`${API_URL}/jurusans?pagination[limit]=100`, { cache: "no-store" });
         if (!response.ok) throw new Error("Gagal mengambil jurusan");
 
         const result: StrapiMasterData = await response.json();
