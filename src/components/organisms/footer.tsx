@@ -14,7 +14,7 @@ const kolom = [
     judul: "Tentang",
     link: [
       { label: "Beranda", href: "/#beranda" },
-      { label: "About Us", href: "/tentang" },
+      { label: "About Us", href: "/#tentang" },
     ],
   },
   {
