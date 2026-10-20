@@ -77,10 +77,7 @@ export default function PlaceSearchSection() {
                             }}
                             className="rounded border border-purple-400 px-3 py-2 text-sm text-purple-900 md:w-56"
                         >
-                            {/* Teks ini hanya muncul sebagai placeholder, tidak bisa dipilih */}
-                            <option value="" disabled hidden>
-                                Pilih Jurusan
-                            </option>
+                            <option value="">Semua Jurusan</option>
 
                             {listJurusan.map((j) => (
                                 <option key={j} value={j}>{j}</option>
@@ -95,10 +92,7 @@ export default function PlaceSearchSection() {
                             }}
                             className="rounded border border-purple-400 px-3 py-2 text-sm text-purple-900 md:w-56"
                         >
-                            {/* Teks ini hanya muncul sebagai placeholder, tidak bisa dipilih */}
-                            <option value="" disabled hidden>
-                                Pilih Kategori
-                            </option>
+                            <option value="">Semua Kategori</option>
 
                             {listKategori.map((k) => (
                                 <option key={k} value={k}>{k}</option>
